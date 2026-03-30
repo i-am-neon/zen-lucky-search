@@ -1,0 +1,25 @@
+{
+  "manifest_version": 2,
+  "name": "Zen Lucky Search",
+  "version": "1.0.0",
+  "description": "Type '! query' in the address bar to jump directly to the first DuckDuckGo search result.",
+  "author": "silver",
+  "homepage_url": "https://github.com/i-am-neon/zen-lucky-search",
+  "icons": {
+    "16": "icons/icon-16.png",
+    "48": "icons/icon-48.png",
+    "128": "icons/icon-128.png"
+  },
+  "omnibox": {
+    "keyword": "!"
+  },
+  "background": {
+    "scripts": ["background.js"]
+  },
+  "browser_specific_settings": {
+    "gecko": {
+      "id": "zen-lucky-search@silver",
+      "strict_min_version": "52.0"
+    }
+  }
+}
