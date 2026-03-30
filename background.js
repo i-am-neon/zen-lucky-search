@@ -1,5 +1,5 @@
 browser.omnibox.setDefaultSuggestion({
-  description: "Go to first result for: %s"
+  description: "Go to first result"
 });
 
 browser.omnibox.onInputEntered.addListener((text, disposition) => {

@@ -1,65 +1,38 @@
 # Zen Lucky Search
 
-Skip the search results page. Type `! query` in the address bar and go directly to the first result.
+Skip the search results page. Type `! query` in the address bar and jump straight to the first result.
 
-Built for [Zen Browser](https://zen-browser.app) and Firefox. Powered by DuckDuckGo's `!ducky` redirect.
+Built for [Zen Browser](https://zen-browser.app) and Firefox. Powered by [DuckDuckGo](https://duckduckgo.com).
 
-## How it works
+## Usage
 
-1. Type `!` in the address bar — the extension activates
-2. Press `Space`, then type your search query
-3. Press `Enter` — you're taken directly to the first search result
+1. Type `!` in the address bar
+2. Press `Space`, type your query
+3. Press `Enter` — you land on the first result
 
-### Modifier keys
-
-| Action | Result |
+| Shortcut | Behavior |
 |---|---|
-| `Enter` | First result in current tab |
-| `Shift+Enter` | First result in new foreground tab |
-| `Alt+Enter` | First result in new background tab |
+| `Enter` | Opens in current tab |
+| `Shift+Enter` | Opens in new tab |
+| `Alt+Enter` | Opens in background tab |
 
 ## Install
 
-### From Firefox Add-ons (recommended)
+### Firefox Add-ons
 
-Coming soon — submission pending.
+Coming soon.
 
-### Manual install
+### Manual
 
-1. Download or clone this repo
-2. Open `about:debugging#/runtime/this-firefox` in Zen/Firefox
-3. Click "Load Temporary Add-on"
-4. Select the `manifest.json` file
+1. Clone this repo
+2. Open `about:debugging#/runtime/this-firefox`
+3. Click **Load Temporary Add-on** and select `manifest.json`
 
-### From source
+## How it works
 
-```bash
-git clone https://github.com/i-am-neon/zen-lucky-search.git
-cd zen-lucky-search
-```
+The extension registers `!` as an [omnibox keyword](https://developer.mozilla.org/en-US/docs/Mozilla/Add-ons/WebExtensions/API/omnibox). Your query is sent through DuckDuckGo's `!ducky` bang, which redirects server-side to the first organic result.
 
-Then load as a temporary add-on (see above).
-
-## How it works under the hood
-
-The extension registers `!` as an [omnibox keyword](https://developer.mozilla.org/en-US/docs/Mozilla/Add-ons/WebExtensions/API/omnibox). When you type `! query` and press Enter, it navigates to:
-
-```
-https://duckduckgo.com/?q=!ducky+{your query}
-```
-
-DuckDuckGo's `!ducky` bang performs a server-side redirect to the first organic search result. No API keys, no scraping, no content scripts.
-
-## Permissions
-
-None. This extension only uses the omnibox API — it cannot read your browsing data, modify pages, or access any other browser functionality.
-
-## Compatibility
-
-- Zen Browser (all versions)
-- Firefox 52+
-
-Works with Zen's floating URL bar out of the box.
+No API keys. No scraping. No content scripts. Zero permissions.
 
 ## License
 
